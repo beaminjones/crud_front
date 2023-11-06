@@ -25,10 +25,6 @@
   margin-right: 5px;
 }
 
-.icon-search {
-  cursor: pointer;
-}
-
 .close_icon {
   color: red;
   margin-left: 30px;
@@ -58,18 +54,6 @@
 
 .menu-icon {
   display: none;
-}
-
-.header-left input {
-  border-radius: 8px;
-  border: 0;
-  box-sizing: border-box;
-  font-size: 15px;
-  outline: 0;
-  padding: 1px 10px 0px;
-  border: 1px solid #bbb;
-  margin: 15px 10px 25px 0px;
-  height: 30px;
 }
 
 #sidebar {
@@ -270,10 +254,6 @@ input::placeholder {
 }
 
 @media screen and (max-width: 576px) {
-  .header-left input {
-    margin: 15px;
-  }
-
   .form form {
     grid-template-columns: 1fr;
   }

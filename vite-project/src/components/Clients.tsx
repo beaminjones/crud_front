@@ -1,6 +1,4 @@
 import { FaTrash, FaEdit } from "react-icons/fa";
-import { BsSearch } from "react-icons/bs";
-import { IMaskInput } from "react-imask";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Api from '../helpers/Api';
@@ -36,10 +34,6 @@ const handleDelete = async (id: any) => {
 
   return (
     <div className="table-clients">
-      <div className="header-left">
-        <IMaskInput mask="00.000.000/0000-00" />
-        <BsSearch className="icon-search" />
-      </div>
       <table>
         <thead>
           <tr>
