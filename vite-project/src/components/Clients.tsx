@@ -10,17 +10,29 @@ export function Clients() {
 
   const [clients, setClients] = useState([]);
 
-  useEffect(() => {
-      const getClients = async () => {
-          try {
-              const cats = await api.getClients();
-              setClients(cats);
-          } catch ( error ) {
-              console.error(error);
-          }
-      }
-      getClients();
-  }, []);
+ 
+const getClients = async (setClients: any, api: any) => {
+  try {
+    const cats = await api.getClients();
+    setClients(cats);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+useEffect(() => {
+  getClients(setClients, api); 
+}, []);
+
+
+const handleDelete = async (id: any) => {
+  try {
+    await api.deleteClient(id);
+    getClients(setClients, api); 
+  } catch (error) {
+    console.error(error);
+  }
+};
 
   return (
     <div className="table-clients">
@@ -40,17 +52,17 @@ export function Clients() {
         </thead>
         <tbody> {
           clients.map((client)=> (
-          <tr>
+          <tr key={client.id}>
             <td>{client.name}</td>
-            <td>Empresa 123</td>
-            <td>546785787</td>
+            <td>{client.companyName}</td>
+            <td>{client.document}</td>
             <td>
-              <Link to="/form">
+              <Link to={`/edit/${client.id}`}>
                 <FaEdit />
               </Link>
             </td>
             <td>
-              <FaTrash />
+              <FaTrash onClick={() => handleDelete(client.id)}/>
             </td>
           </tr>
           ))

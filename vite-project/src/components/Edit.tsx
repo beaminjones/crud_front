@@ -1,9 +1,12 @@
 import { IMaskInput } from "react-imask";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import Api from "../helpers/Api";
+import {useParams } from 'react-router-dom';
 
-export function Form() {
+export function Edit() {
   const api = Api();
+
+  const  { id } = useParams();
 
   const [name, setName] = useState();
   const [password, setPassword] = useState();
@@ -14,6 +17,26 @@ export function Form() {
   const [number, setNumber] = useState();
   const [phone, setPhone] = useState();
   const [email, setEmail] = useState();
+
+  useEffect(() => {
+    const getClient = async (id: number) => {
+        try {
+            const client = await api.getClient(id);
+            setName(client.name);
+            setPassword(client.password);
+            setCompanyName(client.companyName);
+            setDocument(client.document);
+            setPostcode(client.postcode);
+            setAddress(client.address);
+            setNumber(client.number);
+            setPhone(client.phone);
+            setEmail(client.email);
+        } catch ( error ) {
+            console.error(error);
+        }
+    }
+    getClient(id);
+}, []);
 
   const submitForm = async (event: any) => {
     event.preventDefault();
@@ -30,7 +53,7 @@ export function Form() {
       email
     }
 
-    const json = await api.storeClient(payload);
+    const json = await api.updateClient(payload, id);
     console.log(json);
 
   }
@@ -48,7 +71,7 @@ export function Form() {
         <label>
           Senha
           <br />
-          <input type="password" placeholder="Senha" 
+          <input type="text" placeholder="Senha" 
            value={password}
            onChange={e=>setPassword(e.target.value as any)}
           />

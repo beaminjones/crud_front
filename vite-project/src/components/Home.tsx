@@ -11,8 +11,8 @@ export function Home() {
   useEffect(() => {
       const getClients = async () => {
           try {
-              const cats = await api.getClients();
-              setClients(cats);
+              const client = await api.getClients();
+              setClients(client);
           } catch ( error ) {
               console.error(error);
           }

@@ -194,6 +194,7 @@
 }
 
 .form button {
+  width: 150px;
   background-color: #003063;
   color: #fff;
   border-radius: 5px;
@@ -281,3 +282,4 @@ input::placeholder {
     width: 250px;
   }
 }
+
