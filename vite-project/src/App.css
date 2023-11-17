@@ -1,12 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #fff;
-  color: #003063;
+  background-color: #262626;
+  color: #d9d9d9;
   font-family: "Roboto", sans-serif;
+}
+
+.bi-grid-1x2-fill, .bi-person-add, .bi-people{
+  vertical-align: middle;
+  line-height: 1px;
+  font-size: 20px;
 }
 
 .icon {
@@ -78,8 +85,14 @@
 
 .sidebar-brand {
   margin-top: 15px;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+
+.icon-sidebar {
+  margin-right: 10px;
 }
 
 .sidebar-list {
@@ -92,15 +105,17 @@
   font-size: 18px;
 }
 
-.sidebar-list-item:hover {
+.sidebar-list-item a:hover {
   cursor: pointer;
-  text-decoration: underline;
-  text-decoration-color: #ccc;
+  background-color: #333333;
+  text-decoration-color: #d9d9d9;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 .sidebar-list-item > a {
   text-decoration: none;
-  color: #9e9ea4;
+  color: #d9d9d9;
 }
 
 .sidebar-responsive {
@@ -116,7 +131,6 @@
   color: rgba(255, 255, 255, 0.95);
 }
 
-
 .main-cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -130,38 +144,38 @@
   justify-content: space-around;
   padding: 8px 15px;
   border-radius: 5px;
-  background-color: #ffcc00;
+  background-color: #5e60ce;
 }
 
 .card h1 {
-  background-color: #ffcc00;
+  background-color: #5e60ce;
 }
 
 .card-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #ffcc00;
+  background-color: #5e60ce;
 }
 
 .card-inner h3 {
-  background-color: #ffcc00;
+  background-color: #5e60ce;
 }
 
 .card-inner > .card_icon {
   font-size: 25px;
-  background-color: #ffcc00;
+  background-color: #5e60ce;
 }
 
 .form form {
-  border-radius: 4px;
+  border-radius: 10px;
   box-sizing: border-box;
   height: auto;
   padding: 20px;
-  box-shadow: 0px 0px 5px #ccc;
   display: grid;
   grid-template-columns: 1fr 1fr 0.5fr;
-  margin: 10px;
+  margin: 20px;
+  background-color: #333333;
 }
 
 .form form input {
@@ -173,46 +187,65 @@
   outline: 0;
   padding: 1px 10px 0px;
   margin: 5px;
-  border: 1px solid #bbb;
+  border: 1px solid #333333;
   height: 40px;
+}
+
+.form form label {
+  background-color: #333333;
 }
 
 .form button {
   width: 150px;
-  background-color: #003063;
-  color: #fff;
+  background-color: #1e6f9f;
+  color: #d9d9d9;
   border-radius: 5px;
   padding: 10px 40px;
   border: none;
   font-weight: bold;
-  margin: 10px;
+  margin: 15px 10px 0px 10px;
   cursor: pointer;
 }
 
 input::placeholder {
-  color: #ccc;
+  color: #333333;
   font-size: 15px;
 }
 
 .table-clients table {
-  width: 100%;
-  background-color: #fff;
+  width: 97%;
+  background-color: #333333;
   padding: 20px;
-  box-shadow: 0px 0px 5px #ccc;
-  border-radius: 5px;
+  border-radius: 10px;
   word-break: break-all;
+  margin: 20px;
+  box-sizing: border-box;
 }
 
 .table-clients td {
   padding-top: 15px;
   text-align: start;
   width: auto;
+  background-color: #333333;
 }
 
 .table-clients th {
   text-align: start;
   border-bottom: inset;
   padding-bottom: 5px;
+  background-color: #333333;
+}
+
+.icon-edit {
+  background-color: #333333;
+}
+.icon-trash {
+  background-color: #333333;
+  cursor: pointer;
+}
+
+td a {
+  background-color: #333333;
 }
 
 @media screen and (max-width: 992px) {
@@ -262,4 +295,3 @@ input::placeholder {
     width: 250px;
   }
 }
-

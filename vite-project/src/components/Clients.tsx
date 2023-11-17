@@ -52,11 +52,11 @@ const handleDelete = async (id: any) => {
             <td>{client.document}</td>
             <td>
               <Link to={`/edit/${client.id}`}>
-                <FaEdit />
+                <FaEdit className="icon-edit" />
               </Link>
             </td>
             <td>
-              <FaTrash onClick={() => handleDelete(client.id)}/>
+              <FaTrash onClick={() => handleDelete(client.id)} className="icon-trash"/>
             </td>
           </tr>
           ))
